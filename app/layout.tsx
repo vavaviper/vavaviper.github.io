@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Varsha Prasad",
   description: "Portfolio of Varsha Prasad — ML Engineer & Software Developer",
+  icons: {
+    icon: "/player.png",
+  },
 };
 
 export default function RootLayout({
