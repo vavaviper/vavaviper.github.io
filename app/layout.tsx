@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Varsha Prasad",
   description: "Portfolio of Varsha Prasad — ML Engineer & Software Developer",
   icons: {
-    icon: "/player.png",
+    icon: "/player-icon.png",
   },
 };
 
