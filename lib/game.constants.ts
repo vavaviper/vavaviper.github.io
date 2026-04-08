@@ -97,12 +97,21 @@ export const experiences = [
 
 export const projects = [
   {
-    title: "Employee Management Microservice",
-    stack: "Java · Spring Boot · PostgreSQL · Spring AOP",
-    href: "https://github.com/vavaviper/ems",
+    title: "GroceryDash Game",
+    stack: "Unity · C#",
+    href: "https://github.com/vavaviper/windowdash",
     bullets: [
-      "Built a Spring Boot + PostgreSQL CRUD service with Spring AOP for automated audit trails and JPQL aggregations for real-time org analytics.",
-      "Integrated OpenAPI/Swagger and Spring Actuator to automate documentation and system health monitoring.",
+      "Built in 48 hrs at Waterloo Game Jam - FSM-driven car/player mechanics, weight-based inventory, and timed order fulfillment loops.",
+      "Engineered event-driven systems for scoring, timers, UI menus, and multi-level progression with scaling difficulty.",
+    ],
+  },
+  {
+    title: "Candid",
+    stack: "Next.js 15 · Tailwind CSS · Express.js",
+    href: "https://bereal-dupe.vercel.app/",
+    bullets: [
+      "BeReal-style event platform where organizers create access-code or geolocation-locked events and fire time-limited photo prompts.",
+      "Attendees capture and submit photos that stream onto a live masonry canvas with 30s polling; full organizer dashboard for prompt management.",
     ],
   },
   {
@@ -124,21 +133,12 @@ export const projects = [
     ],
   },
   {
-    title: "GroceryDash Game",
-    stack: "Unity · C#",
-    href: "https://github.com/vavaviper/windowdash",
+    title: "Employee Management Microservice",
+    stack: "Java · Spring Boot · PostgreSQL · Spring AOP",
+    href: "https://github.com/vavaviper/ems",
     bullets: [
-      "Built in 48 hrs at Waterloo Game Jam - FSM-driven car/player mechanics, weight-based inventory, and timed order fulfillment loops.",
-      "Engineered event-driven systems for scoring, timers, UI menus, and multi-level progression with scaling difficulty.",
+      "Built a Spring Boot + PostgreSQL CRUD service with Spring AOP for automated audit trails and JPQL aggregations for real-time org analytics.",
+      "Integrated OpenAPI/Swagger and Spring Actuator to automate documentation and system health monitoring.",
     ],
-  },
-  {
-    title: "Candid",
-    stack: "Next.js 15 · Tailwind CSS · Express.js",
-    href: "https://bereal-dupe.vercel.app/",
-    bullets: [
-      "BeReal-style event platform where organizers create access-code or geolocation-locked events and fire time-limited photo prompts.",
-      "Attendees capture and submit photos that stream onto a live masonry canvas with 30s polling; full organizer dashboard for prompt management.",
-    ],
-  },
+  }
 ];

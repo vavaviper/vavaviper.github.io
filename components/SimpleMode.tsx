@@ -6,9 +6,10 @@ import { AboutContent } from "./AboutContent";
 
 interface SimpleModeProps {
   onBackToGame: () => void;
+  showBackToGame: boolean;
 }
 
-export function SimpleMode({ onBackToGame }: SimpleModeProps) {
+export function SimpleMode({ onBackToGame, showBackToGame }: SimpleModeProps) {
   const [openExperience, setOpenExperience] = useState<string | null>(null);
 
   return (
@@ -27,13 +28,15 @@ export function SimpleMode({ onBackToGame }: SimpleModeProps) {
               SWE / ML Engineer · Management Engineering @ Waterloo
             </p>
           </div>
-          <button
-            type="button"
-            onClick={onBackToGame}
-            className="rounded-none border-2 border-[#1a0f35] bg-[#3b2d72] px-3 py-1.5 text-xs font-bold text-[#B7B5E4] shadow-[3px_3px_0_#B7B5E4] transition hover:bg-[#4a3a82] active:shadow-none active:translate-x-[3px] active:translate-y-[3px]"
-          >
-            ◀ Back to game
-          </button>
+          {showBackToGame && (
+            <button
+              type="button"
+              onClick={onBackToGame}
+              className="rounded-none border-2 border-[#1a0f35] bg-[#3b2d72] px-3 py-1.5 text-xs font-bold text-[#B7B5E4] shadow-[3px_3px_0_#B7B5E4] transition hover:bg-[#4a3a82] active:shadow-none active:translate-x-[3px] active:translate-y-[3px]"
+            >
+              ◀ Back to game
+            </button>
+          )}
         </header>
 
         {/* Sections */}

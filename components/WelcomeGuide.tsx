@@ -3,9 +3,14 @@
 interface WelcomeGuideProps {
   onClose: () => void;
   onEnterSimpleMode: () => void;
+  showGameModeOption: boolean;
 }
 
-export function WelcomeGuide({ onClose, onEnterSimpleMode }: WelcomeGuideProps) {
+export function WelcomeGuide({
+  onClose,
+  onEnterSimpleMode,
+  showGameModeOption,
+}: WelcomeGuideProps) {
   return (
     <div className="absolute inset-0 z-30 flex items-center justify-center bg-[#1a0f35]/80 p-4 backdrop-blur-sm">
       <div className="w-full max-w-xl rounded-none border-4 border-[#B7B5E4] bg-[#f5f2ff] shadow-[6px_6px_0_#B7B5E4]">
@@ -61,13 +66,15 @@ export function WelcomeGuide({ onClose, onEnterSimpleMode }: WelcomeGuideProps) 
           </p>
 
           <div className="flex flex-col gap-2">
-            <button
-              type="button"
-              onClick={onClose}
-              className="w-full rounded border-2 border-[#1a0f35] bg-[#3b2d72] py-2.5 text-base font-bold text-[#B7B5E4] shadow-[2px_2px_0_#B7B5E4] transition hover:bg-[#4a3a82] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
-            >
-              Game mode
-            </button>
+            {showGameModeOption && (
+              <button
+                type="button"
+                onClick={onClose}
+                className="w-full rounded border-2 border-[#1a0f35] bg-[#3b2d72] py-2.5 text-base font-bold text-[#B7B5E4] shadow-[2px_2px_0_#B7B5E4] transition hover:bg-[#4a3a82] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
+              >
+                Game mode
+              </button>
+            )}
             <button
               type="button"
               onClick={onEnterSimpleMode}

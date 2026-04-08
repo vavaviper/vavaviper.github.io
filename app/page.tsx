@@ -12,6 +12,9 @@ export default function Home() {
   const [simpleMode, setSimpleMode] = useState(false);
   const [showGuide, setShowGuide] = useState(true);
   const [viewport, setViewport] = useState({ w: 0, h: 0 });
+  const isLaptopView = viewport.w >= 1024;
+  const forceSimpleMode = viewport.w > 0 && !isLaptopView;
+  const allowGameMode = isLaptopView;
 
   const {
     playerPos,
@@ -43,6 +46,12 @@ export default function Home() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
+  useEffect(() => {
+    if (!forceSimpleMode) return;
+    setSimpleMode(true);
+    setShowGuide(false);
+  }, [forceSimpleMode]);
+
   // Handle document overflow
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -59,7 +68,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#1a0f35] text-[#e8edf8]" style={{ fontFamily: "'Pixelify Sans', monospace" }}>
-      {!simpleMode && (
+      {!simpleMode && allowGameMode && (
         <div className="fixed inset-0 overflow-hidden">
           {/* Welcome guide */}
           {showGuide && (
@@ -69,6 +78,7 @@ export default function Home() {
                 setSimpleMode(true);
                 setShowGuide(false);
               }}
+              showGameModeOption={allowGameMode}
             />
           )}
 
@@ -150,8 +160,9 @@ export default function Home() {
       )}
 
       {/* Simple mode */}
-      {simpleMode && (
+      {(simpleMode || forceSimpleMode) && (
         <SimpleMode
+          showBackToGame={allowGameMode}
           onBackToGame={() => {
             setSimpleMode(false);
             setShowGuide(true);
